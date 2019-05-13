@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Faking text area</title>
+</head>
+<body>
+<div class="to">
+    <h2>Nhập vào dòng chữ bất kì:</h2>
+    <form action="">
+        <textarea disabled id="textInput" cols="50" rows="10"></textarea>
+    </form>
+
+</div>
+<script>
+    let textInput=document.getElementById("textInput").value;
+    let inputArray=textInput.split("");
+    let fixedArray=["t","o","i"];
+    let count=0;
+    let result="";
+    window.addEventListener("keydown",showText);
+    function showText(){
+        count++;
+        for(i=0;i<count;i++){
+            inputArray[i]=fixedArray[i];
+        }
+        console.log(inputArray);
+        showNewText(inputArray);
+    }
+    function showNewText(inputArray){
+        document.getElementById("textInput").value=inputArray.toString();
+    }
+</script>
+</body>
+<style>
+    .to{
+        margin-left:auto;
+        margin-right:auto;
+        text-align: center;
+    }
+    textarea:disabled{
+        background-color: white;
+    }
+    .un
+</style>
+</html>
